@@ -1,8 +1,10 @@
 \documentclass[review]{elsarticle}
 
 \usepackage{lineno,hyperref}
+\usepackage{arydshln}
+\usepackage{glossaries}
 \modulolinenumbers[5]
-
+\input{ValuesGlossary}
 \journal{Journal of \LaTeX\ Templates}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -41,69 +43,177 @@
 
 \begin{frontmatter}
 
-\title{Sustainable textiles\tnoteref{mytitlenote}}
+\title{Sustainable clothing in youngsters \tnoteref{mytitlenote}}
 %\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
 %% Group authors per affiliation:
-\author{Sandra Rousseau\fnref{myfootnote}}
-\address{Radarweg 29, Amsterdam}
-\fntext[myfootnote]{Corresponding author}
-
-%% or include affiliations in footnotes:
-\author[mymainaddress,mysecondaryaddress]{Elsevier Inc}
-\ead[url]{www.elsevier.com}
-
-\author[mysecondaryaddress]{Global Customer Service\corref{mycorrespondingauthor}}
+\author[]{Sandra Rousseau\corref{mycorrespondingauthor}}
+%\address{Radarweg 29, Amsterdam}
 \cortext[mycorrespondingauthor]{Corresponding author}
-\ead{support@elsevier.com}
+\ead{sandra.rousseau@kuleuven.be}
+%% or include affiliations in footnotes:
+\author[mymainaddress]{Ra\"{i}sa Carmen}
 
-\address[mymainaddress]{1600 John F Kennedy Boulevard, Philadelphia}
-\address[mysecondaryaddress]{360 Park Avenue South, New York}
+
+
+
+\address[mymainaddress]{CEDON, KU Leuven}
+%\address[mysecondaryaddress]{}
 
 \begin{abstract}
-This template helps you to create a properly formatted \LaTeX\ manuscript.
+This article investigates how important sustainability is for youngsters when buying clothing. The focus group are respondents between 15 and 35 years old in Flanders and Brussels (Belgium).
 \end{abstract}
 
 \begin{keyword}
-\texttt{elsarticle.cls}\sep \LaTeX\sep Elsevier \sep template
-\MSC[2010] 00-01\sep  99-00
+Discrete choice model\sep sustainable clothing \sep choice modelling \sep stated choice
 \end{keyword}
 
 \end{frontmatter}
 
 \linenumbers
 
-\section{The Elsevier article class}
+\section{Introduction}\label{sec:Intro}
+This article discusses the results of a survey on sustainable consumption of clothing/fashion with youngsters in the Flemish and the Brussels-Capital Regions (Belgium).
 
-\paragraph{Installation} If the document class \emph{elsarticle} is not available on your computer, you can download and install the system package \emph{texlive-publishers} (Linux) or install the \LaTeX\ package \emph{elsarticle} using the package manager of your \TeX\ installation, which is typically \TeX\ Live or Mik\TeX.
+Negative environmental and social are associated with the production, usage, maintenance, and disposal of clothes \citep{Roos2016}. Figure~\ref{fig:MaterialFlow} summarizes the current, problematic global material flow. The most common fibers used for clothes are synthetic (mostly coal- and petroleum-based) and cotton. As synthetic fibers are usually non-renewable and traditional cotton-growing uses excessive amounts of water, pesticides, and fertilizers, the industry if actively searching for alternatives \citep{Meyer}. Hazardous chemicals are used to turn the raw materials into clothing and textiles \citep{VanDerVelden,Kant2012}. Next, the clothes may have to be transported over a long distance to get to the consumer. During the use and maintenance phase, washing the clothes requires water and electricity, the detergents may be hazardous to the environment, and synthetic fibers may release micro-fibers which is a real threat to marine environments \citep{Cesa2017,DeFalco2018, Thevenon}. Lastly, there are major ethical concerns about the way the clothing industry is set up. Scandals about child labor, low wages, abuse, and accidents (like the one in Rana Plaza in 2013) are rampant and the Belgian government is lagging behind when it comes to forcing industry to take responsibility\citep{Goethals2018}. Unfortunately, \cite{Morlet2017} show that clothes sales doubled from 50 to 100 billion units per year between 2000 and 2015. It is therefor no surprise that textiles and fashion are currently on the agenda of, for instance, WRAP in the UK \citep{WrapUK}, ECAP in Europe \citep{ECAP} and the Ellen MacArthur Foundation \citep{Morlet2017}. 
+\begin{figure}[ht]
+\begin{center}
+ \includegraphics[width=0.7\textwidth]{figures/Figure-3_-Global-material-flows-for-clothing-in-2015.pdf}
+ \caption{Infographic for the global material flows for clothing industry (adapted from \citep{Morlet2017}) }\label{fig:MaterialFlow}
+ \end{center}
+\end{figure}
 
-\paragraph{Usage} Once the package is properly installed, you can use the document class \emph{elsarticle} to create a manuscript. Please make sure that your manuscript follows the guidelines in the Guide for Authors of the relevant journal. It is not necessary to typeset your manuscript in exactly the same way as an article, unless you are submitting to a camera-ready copy (CRC) journal.
+Apart from technological advances in new, better, environmentally-friendly alternative fibers and dyes \citep{A.R.Bunsell2018,Shahid2013} or better recycling technologies \citep{Woolridge2006}, more sustainable business models can help in reducing the environmental impact of clothes by prolonging the clothes' lifetime. \citep{Elander2017} distinguish business models that (1) allow sharing clothes with others such as leasing of clothing libraries \citep{Pedersen2015,Zamani2017}, (2) collect used garments and resell them \citep{Farrant2010}, (3) extend the technical lifetime through better product design , and (5) redesign unsold or used textile products into a new product. These business models can only be economically viable if consumers are willing to participate and/or pay for these (often labor-expensive) collecting, sorting, repair, and laundering activities. This survey aims to inform companies about the market potential of these new business models and may help policy makers in choosing the right incentives to help these businesses \citep{Watson2017}.
 
-\paragraph{Functionality} The Elsevier article class is based on the standard article class and supports almost all of the functionality of that class. In addition, it features commands and options to format the
-\begin{itemize}
-\item document style
-\item baselineskip
-\item front matter
-\item keywords and MSC codes
-\item theorems, definitions and proofs
-\item lables of enumerations
-\item citation style and labeling.
-\end{itemize}
+This study focuses on 16-to-35-year-olds (also called \emph{millennials} or \emph{Generation Y}) and analyses their clothes consumptions patterns, what they are looking for in clothing and what they are willing to pay for. These people are the consumers of the future and previous studies have shown that, although they are more environmentally conscious, they are reluctant to change their consumptions patterns. This study should yield insights into whether these consumers are open to the previously mentionned new business models and ideas and whether they are willing to pay extra for sustainable clothing.
 
-\section{Front matter}
+\cite{Farsang2014} describe the results of a similar study on clothing and fashion consumption by millennials in  Germany, the Netherlands, Sweden, the UK and the US. Their dataset had over 6000 respondents but their analysis was largely explorative; no deeper analysis with regression models or significance tests were performed.
 
-The author names and affiliations could be formatted in two ways:
-\begin{enumerate}[(1)]
-\item Group the authors per affiliation.
-\item Use footnotes to indicate the affiliations.
-\end{enumerate}
-See the front matter of this document for examples. You are recommended to conform your choice to the journal you are submitting to.
+\section{Method and data collection}\label{sec:method}
+This section elaborates on the chosen focus group for our study (Section~\ref{subsec:method-data}) and on how the Discrete-choice experiment was designed (Section~\ref{subsec:method-dce}).
 
-\section{Bibliography styles}
+\subsection{Population and data development}\label{subsec:method-data}
+Our study focuses on people between 15 and 35 years old that are living in Brussels or Flanders (Belgium). The questionnaire was developed in cooperation with second Bachelor students, based on previous research and their own experience. 
 
-There are various bibliography styles available. You can select the style of your choice in the preamble of this document. These styles are Elsevier styles based on standard styles like Harvard and Vancouver. Please use Bib\TeX\ to generate your bibliography and include DOIs whenever available.
+We question the respondents about socio-demographic characteristics, shopping and fashion preferences, their preferences for buying a T-shirt in a disrecte choice experiment, and their general attitudes towards sustainability, ecolabels, and use of sustainable business models. 
 
-Here are two sample references: \cite{Feynman1963118,Dirac1953888}.
+\subsection{Discrete choice experiment}\label{subsec:method-dce}
+In the stated choice experiment, respondents were asked to choose between two T-shirts, labeled `A' and `B', and an opt-out option (\emph{`Neither of these'}). Based on brainstorm sessions and previous surveys on sustainable fashion (see literature review in Section~\ref{sec:Intro}), six attributes were used to describe the alternatives (see Table~\ref{tab:attributes}). It was explicitly stated that the T-shirt had to be paid with their own money, and that both T-shirts are short-sleeved, in their favorite color, and with their favorite neckline. 
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{l l:ll }
+\hline
+Attribute & Attribute levels&Attribute & Attribute levels\\
+\hline
+Type of fibre&New cotton&Durability&Short life\\
+&Recycled cotton&&Long life\\\cline{3-4}
+&New polyester&Brand & Generic\\
+&Recycled polyester&&Designer\\\hline
+Label&Ecolabel&Country of &European Union\\
+&No label&manufacturing&Asia\\\hline
+Use&New&Price per T-shirt & 7 - 10 - 14 -\\
+&Previously used (2$^{nd}$ hand)&(euro)&19 - 24 - 32\\
+\hline
+\end{tabular}
+\caption{Attributes and attribute levels}
+\label{tab:attributes}
+\end{center}
+\end{table}
+
+To keep the number of choices for each respondent manageable, a D-efficient design with fixed priors and expected signs of two blocks with each six choice cards consisting of two unlabeled profiles and opt-out was determined in Ngene (a ChoiceMetrics software \citep{ChoiceMetrics}).
+
+The data are first analyzed by a conditional logit (CL) model which assumes a linear relationship between utility and attribute parameters and thus requires the error term to be identically and independently distributes according to a Weibull distribution \citep{Mariel2013}. Next, a latent-class model is fitted which includes socio-economic and attitude variables heterogeneity in the respondent's preferences. All analysis was done using the \emph{gmnl} package for R \citep{sarrias2017multinomial}.
+
+\section{Description of the dataset}\label{sec:data}
+In total, there are \gls{demN} respondents between 16 and 35 years old. Only respondents living in Flanders or Brussels were kept for analysis.  \gls{demfemale}\% of respondents are female while \gls{demmale}\% are male. The imbalance in the gender-distribution is likely related to the topic of the study which appeals more to female shoppers.
+
+Figure~\ref{fig:DemAgeGender} shows that many respondents are between 21 and 25 years old. This is not surprising as the survey was part of a course that was taught to third bachelor students who were asked to spread the survey. This is also reflected in the job and financial situation of the respondents (Figure~\ref{fig:JobIncome}); over half of them are students and only a minority (\gls{struggling}\%) indicate that they are financially struggling to make ends meet.
+
+\begin{figure}[ht]
+\begin{center}
+ \includegraphics[width=0.7\textwidth]{figures/DemAgeGender.pdf}
+ \caption{Age and gender distributions of the respondents}\label{fig:DemAgeGender}
+ \end{center}
+\end{figure}
+\begin{figure}[ht]
+\begin{center}
+ \includegraphics[width=0.7\textwidth]{figures/DemJobIncome.pdf}
+ \caption{Job and financial situation of the respondents}\label{fig:JobIncome}
+ \end{center}
+\end{figure}
+
+\subsection{shopping behavior}
+Next to demographics, we also questioned respondents about their typical shopping behavior (Figure~\ref{fig:ShopLoc}) and which features they find important when buying clothes (Figure~\ref{fig:ShopClothing}). The high streets are the most popular shopping location but on-line shopping is equally popular for frequent shoppers (those who shopped more than 5 times in two months). Swapping and second hand markets offer consumers an opportunity to extent the lifetime of clothes but they are far less popular. Price, comfort, and fit (Figure~\ref{fig:ShopClothing}). 
+
+\begin{figure}[ht]
+\begin{center}
+ \includegraphics[width=0.7\textwidth]{figures/ShopLoc.pdf}
+\caption{Response when asked where and how often they went shopping in January or February 2018}\label{fig:ShopLoc}
+ \end{center}
+\end{figure}
+\begin{figure}[ht]
+\begin{center}
+ \includegraphics[width=0.7\textwidth]{figures/ShopClothing.pdf}
+ \caption{Clothing features considered to be important (up to 3 characteristics would be selected by each respondent)}\label{fig:ShopClothing}
+ \end{center}
+\end{figure}
+
+\subsection{Consumer attitudes}
+The survey ended with some questions regarding environmental attitudes and shopping habits. Figure~\ref{fig:Attitudes1} shows that trendy and durable clothing is particularly important. Most respondents don't really seem to care whether their clothing has and ecolabel and few appreciate second-hand clothes or low maintenance fibers.  
+
+\begin{figure}[ht]
+\begin{center}
+ \includegraphics[width=0.95\textwidth]{figures/EndOfLife.pdf}
+ \caption{Environmental attitude and shopping behavior.}\label{fig:EndOfLife}
+ \end{center}
+\end{figure}
+\begin{figure}[ht]
+\begin{center}
+ \includegraphics[width=0.95\textwidth]{figures/Sell2ndhand.pdf}
+ \caption{Current use of repair services and novel business models.}\label{fig:Sell2ndhand}
+ \end{center}
+\end{figure}
+
+\subsection{Clothing end of use}
+
+
+
+\begin{figure}[ht]
+\begin{center}
+ \includegraphics[width=0.7\textwidth]{figures/DemAgeGender.pdf}
+ \caption{Age and gender distributions of the respondents}\label{fig:DemAgeGender}
+ \end{center}
+\end{figure}
+\begin{figure}[ht]
+\begin{center}
+ \includegraphics[width=0.7\textwidth]{figures/DemJobIncome.pdf}
+ \caption{Job and financial situation of the respondents}\label{fig:JobIncome}
+ \end{center}
+\end{figure}
+
+\section{Estimation results}\label{sec:results}
+The conditional logit model of Table~\ref{tab:ConditionalLogitModel} shows that all variables are significant at the 5\% level. The coefficients can be transformed into WTP estimates which are shown in Table~\ref{tab:ConditionalLogitModelWTP}.
+
+
+\input{tables/ConditionalLogitModel}
+\input{tables/ConditionalLogitModelWTP}
+\input{tables/ConditionalLogitModelsummary}
+\input{tables/ConditionalLogitModelStud}
+\input{tables/ConditionalLogitModelBlt}
+\input{tables/Latentclasses1}
+\begin{figure}[ht]
+\begin{center}
+ \includegraphics[width=0.95\textwidth]{figures/LatentClasses.pdf}
+ \caption{Results for a conditional logit model with three latent classes}\label{fig:Habits}
+ \end{center}
+\end{figure}
+
+\section{Discussion}\label{sec:discussion}
+
+\section{Conclusion}\label{sec:conclusion}
+
+
 
 \section*{References}
 
